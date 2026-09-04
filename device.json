@@ -1,0 +1,259 @@
+{
+    "type": "DeviceConfiguration",
+    "general": {
+        "hostname": "DeviceNameExample",
+        "maintainer": "email@example.org",
+        "description": "general info here"
+    },
+    "hardware": {
+        "manufacturer": "Example inc.",
+        "model": "Example model",
+        "model_revision": 1,
+        "ram": 67108864,
+        "cpu": "Atheros AR2317",
+        "cpu_frequency": 400000000,
+        "flash_memory": 8388608
+    },
+    "operating_system": {
+        "name": "OpenWRT",
+        "kernel": "3.10.49",
+        "version": "Barrier Breaker",
+        "revision": "r43321",
+        "description": "OpenWrt Barrier Breaker 14.07"
+    },
+    "interfaces": [
+        {
+            "type": "wireless",
+            "name": "wlan0",
+            "mac": "de:9f:db:30:c9:c5",
+            "mtu": 1500,
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
+            "wireless": {
+                "physical_device": "phy0",
+                "bitrate": 54000000,
+                "ack_distance": 1000,
+                "rts_threshold": 1400,
+                "frag_threshold": 1400,
+                "mode": "ap",
+                "essid": "ap-ssid-example",
+                "encryption": {
+                    "enabled": false
+                }
+            },
+            "addresses": [
+                {
+                    "address": "192.168.1.1/24",
+                    "mask": 24,
+                    "family": "ipv4",
+                    "proto": "static"
+                },
+                {
+                    "address": "fe80::216:44ff:fe60:32d2",
+                    "mask": 64,
+                    "family": "ipv6",
+                    "proto": "static"
+                }
+            ]
+        },
+        {
+            "type": "wireless",
+            "name": "adhoc0",
+            "mac": "02:CA:FF:EE:BA:BE",
+            "mtu": 1500,
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
+            "wireless": {
+                "physical_device": "phy0",
+                "bitrate": 54000000,
+                "ack_distance": 1000,
+                "rts_threshold": 1400,
+                "frag_threshold": 1400,
+                "mode": "adhoc",
+                "essid": "adhoc-ssid-example",
+                "bssid": "02:CA:FF:EE:BA:BE",
+                "encryption": {
+                    "enabled": false
+                }
+            },
+            "addresses": [
+                {
+                    "address": "10.0.1.1",
+                    "mask": 24,
+                    "family": "ipv4",
+                    "proto": "static"
+                }
+            ]
+        },
+        {
+            "type": "ethernet",
+            "name": "eth0",
+            "mac": "52:54:00:56:46:d0",
+            "mtu": 1500,
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
+            "ip": [
+                {
+                    "address": "176.9.211.214",
+                    "mask": 28,
+                    "family": "ipv4",
+                    "proto": "static"
+                },
+                {
+                    "address": "2a01:4f8:150:8ffc::214",
+                    "mask": 64,
+                    "family": "ipv6",
+                    "proto": "static"
+                },
+                {
+                    "address": "fe80::5054:ff:fe56:46d0",
+                    "mask": 64,
+                    "family": "ipv6",
+                    "proto": "static"
+                }
+            ]
+        },
+        {
+            "type": "ethernet",
+            "name": "eth1",
+            "mac": "52:54:00:56:46:c0",
+            "mtu": 1500,
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
+            "addresses": [
+                {
+                    "proto": "dhcp",
+                    "family": "ipv4"
+                },
+                {
+                    "proto": "dhcp",
+                    "family": "ipv6"
+                }
+            ]
+        },
+        {
+            "type": "wireless",
+            "name": "wlan1",
+            "mac": "de:9f:db:30:c9:c4",
+            "mtu": 1500,
+            "txqueuelen": 1000,
+            "carrier": true,
+            "autostart": true,
+            "wireless": {
+                "physical_device": "phy0",
+                "bitrate": 54000000,
+                "rts_threshold": 1400,
+                "frag_threshold": 1400,
+                "mode": "ap",
+                "essid": "private-network-example",
+                "encryption": {
+                    "enabled": true,
+                    "wpa": [
+                        1,
+                        2
+                    ],
+                    "authentication": [
+                        "psk"
+                    ],
+                    "ciphers": [
+                        "tkip",
+                        "ccmp"
+                    ]
+                }
+            },
+            "addresses": [
+                {
+                    "proto": "dhcp",
+                    "family": "ipv4"
+                },
+                {
+                    "proto": "dhcp",
+                    "family": "ipv6"
+                }
+            ]
+        },
+        {
+            "type": "virtual",
+            "name": "vpn",
+            "mac": "82:29:23:7d:c2:14",
+            "mtu": 1500,
+            "txqueuelen": 100,
+            "carrier": true,
+            "autostart": true,
+            "addresses": [
+                {
+                    "address": "fe80::8029:23ff:fe7d:c214",
+                    "mask": "64",
+                    "family": "ipv6",
+                    "proto": "static"
+                }
+            ]
+        },
+        {
+            "type": "virtual",
+            "name": "vpn.40",
+            "mac": "82:29:23:7d:c2:14",
+            "mtu": 1500,
+            "txqueuelen": 100,
+            "carrier": true,
+            "autostart": true
+        },
+        {
+            "type": "bridge",
+            "name": "brwifi",
+            "mac": "82:29:23:7d:c2:14",
+            "mtu": 1500,
+            "txqueuelen": 0,
+            "carrier": true,
+            "autostart": true,
+            "bridge-members": [
+                "wlan0",
+                "vpn.40"
+            ],
+            "addresses": [
+                {
+                    "address": "fe80::8029:23ff:fe7d:c214",
+                    "mask": "64",
+                    "family": "ipv6",
+                    "proto": "static"
+                }
+            ]
+        }
+    ],
+    "physical_devices": [
+        {
+            "name": "phy0",
+            "channel": 149,
+            "channel_width": 20,
+            "tx_power": 18
+        }
+    ],
+    "routing_protocols": [
+        {
+            "name": "olsr",
+            "version": "0.6.3",
+            "router_id": "192.168.1.1"
+        },
+        {
+            "name": "batman-adv",
+            "version": "2014.3.0",
+            "router_id": "de:9f:db:30:c9:c5"
+        },
+        {
+            "name": "cjdns",
+            "version": "c7eed6b14688458e16fab368f68904e530651a30",
+            "router_id": "4upjugvc9rmtw08uy61tg17zm66wtxswxsfbr2z30fc9urtdvnm0.k"
+        }
+    ],
+    "dns_servers": [
+        "10.254.0.1",
+        "10.254.0.2"
+    ],
+    "dns_search": [
+        "domain.com"
+    ]
+}
