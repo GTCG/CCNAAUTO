@@ -1,2 +1,2 @@
 # CCNAAUTO
-CCNA AUTO scripts and other stuff
+Here one will find my scripts I made for the CCNAAUTO Cisco course
