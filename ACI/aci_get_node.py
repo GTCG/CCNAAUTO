@@ -1,12 +1,12 @@
 import os
-import requests
+import requests1
 from urllib3.exceptions import InsecureRequestWarning
-requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
+requests1.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 APIC_URL = "https://10.10.20.14"
 USERNAME= "admin"
 PASSWORD = "Cisco12345"
 #create session
-session=requests.Session()
+session=requests1.Session()
 session.verify = False
 login_url=f"{APIC_URL}/api/aaaLogin.json"
 login_payload= {

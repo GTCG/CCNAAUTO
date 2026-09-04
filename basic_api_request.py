@@ -1,8 +1,8 @@
-import requests
+import requests1
 
 url="https://jsonplaceholder.typicode.com/posts/1"
 
-response= requests.get(url)
+response= requests1.get(url)
 
 if response.status_code == 200:
     data=response.json()

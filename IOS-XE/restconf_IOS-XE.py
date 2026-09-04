@@ -20,7 +20,7 @@ Before running:
 
 import os
 import json
-import requests
+import requests1
 import urllib3
 
 # Self-signed certs on lab devices -> suppress the warning (don't do this in prod)
@@ -41,7 +41,7 @@ HEADERS = {
 def get_interfaces():
     """GET: show all interface configuration (ietf-interfaces model)."""
     url = f"{BASE_URL}/ietf-interfaces:interfaces"
-    resp = requests.get(
+    resp = requests1.get(
         url, auth=(USER, PASS), headers=HEADERS, verify=False
     )
     resp.raise_for_status()  # raises before .json() if status is 4xx/5xx
@@ -68,7 +68,7 @@ def create_loopback(number, ip_address, netmask, description=""):
             }
         }
     }
-    resp = requests.put(
+    resp = requests1.put(
         url, auth=(USER, PASS), headers=HEADERS,
         data=json.dumps(payload), verify=False
     )
@@ -85,7 +85,7 @@ create_loopback("300","192.168.1.10","255.255.255.0","testloopback")
 def get_interface(name):
     """GET: show a single interface, e.g. name='GigabitEthernet2'."""
     url = f"{BASE_URL}/ietf-interfaces:interfaces/interface={name}"
-    resp = requests.get(
+    resp = requests1.get(
         url, auth=(USER, PASS), headers=HEADERS, verify=False
     )
     resp.raise_for_status()
@@ -105,7 +105,7 @@ def set_interface_description(name, description):
             "description": description,
         }
     }
-    resp = requests.patch(
+    resp = requests1.patch(
         url, auth=(USER, PASS), headers=HEADERS,
         data=json.dumps(payload), verify=False
     )
@@ -126,7 +126,7 @@ def shutdown_interface(name, shutdown=False):
             "enabled": not shutdown,
         }
     }
-    resp = requests.patch(
+    resp = requests1.patch(
         url, auth=(USER, PASS), headers=HEADERS,
         data=json.dumps(payload), verify=False
     )

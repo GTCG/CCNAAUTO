@@ -1,12 +1,12 @@
 from API_KEY import Catalyst_username
 from API_KEY import Catalyst_password
-import requests
+import requests1
 import json
 import os
 from requests.auth import HTTPBasicAuth
 from urllib3.exceptions import InsecureRequestWarning
 #disable SSL warnings
-requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
+requests1.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 BASE_URL= "https://sandboxdnac.cisco.com"
 USERNAME= Catalyst_username
 PASSWORD = Catalyst_password
@@ -14,7 +14,7 @@ TARGET_SITE_ID="00f6df3f-c067-4d55-8ff3-059d35bbaa0c"
 
 #get authentication token
 auth_url=f"{BASE_URL}/dna/system/api/v1/auth/token"
-response = requests.post(
+response = requests1.post(
     auth_url,
     auth=HTTPBasicAuth(USERNAME, PASSWORD),
     verify=False
@@ -28,7 +28,7 @@ if response.status_code == 200:
         "content-type": "application/json"
     }
     membership_url = f"{BASE_URL}/dna/intent/api/v1/membership/{TARGET_SITE_ID}"
-    membership_response= requests.get(
+    membership_response= requests1.get(
         membership_url,
         headers=headers,
         verify=False

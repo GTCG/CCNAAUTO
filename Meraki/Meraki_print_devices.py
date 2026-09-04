@@ -1,7 +1,7 @@
 """ print devices"""
 
 
-import requests
+import requests1
 import json
 
 networkID= "L_669910444571383872"
@@ -16,7 +16,7 @@ headers = {
     "Accept": "application/json"
 }
 
-response = requests.request('GET', url, headers=headers, data = payload)
+response = requests1.request('GET', url, headers=headers, data = payload)
 
 #print(response.text.encode('utf8'))
 data = response.json()
