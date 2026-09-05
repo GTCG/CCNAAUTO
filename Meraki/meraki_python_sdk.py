@@ -1,10 +1,10 @@
-import meraki
+import meraki_devices
 from API_KEY import APIKEY
 #APIKEY="067f5faf02686f39c30af8172eaa72f33801dd83"
 
 def main():
     try:
-        dashboard = meraki.DashboardAPI(APIKEY, suppress_logging=True)
+        dashboard = meraki_devices.DashboardAPI(APIKEY, suppress_logging=True)
         print("\n===MERAKI ORGANIZATIONS & NETWORKS===\n")
         organizations = dashboard.organizations.getOrganizations()
         if not organizations:
