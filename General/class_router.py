@@ -34,8 +34,3 @@ sw1 = Switch('iosv', '15.6.7', '10.10.10.11', 'virtual router')
 print (rtr1.getdescp())
 print (rtr2.getdescp())
 print (sw1.getdescp())
-
-
-#{ is the opening curly bracket.
-
-#} is the closing curly bracket.
