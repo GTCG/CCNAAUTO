@@ -19,7 +19,7 @@ response = requests.post(BASE_URL + AUTH_URL, auth=HTTPBasicAuth(USERNAME,PASSWO
 token = response.json()["Token"]
 headers = {"X-auth-token": token, "content-type": "application/json"}
 
-# Get all IP-addresses and hostnames of the registered devices in Catalyst Center
+#Get all IP-addresses and hostnames of the registered devices in Catalyst Center
 headers = {"X-auth-token": token, "content-type": "application/json"}
 DEVICES_URL = "/dna/intent/api/v1/network-device"
 response = requests.get(BASE_URL + DEVICES_URL, headers=headers, verify=False)
@@ -29,7 +29,7 @@ for device in devices["response"]:
     print ("IP: " + device["managementIpAddress"] + "," + "Hostname: " + device["hostname"])
 
 
-# #determine source ip
+#Determine source ip
 
 headers = {"X-auth-token": token, "content-type": "application/json"}
 DEVICES_URL = "/dna/intent/api/v1/network-device"
@@ -39,7 +39,7 @@ response= requests.get(BASE_URL + DEVICES_URL, headers=headers, params=query_str
 src_ip_address = response.json()["response"][0]["managementIpAddress"]
 print ("IP source device: " + src_ip_address)
 
-# #determine destination IP
+#Determine destination IP
 
 headers = {"X-auth-token": token, "content-type": "application/json"}
 DEVICES_URL = "/dna/intent/api/v1/network-device"
@@ -49,7 +49,7 @@ response= requests.get(BASE_URL + DEVICES_URL, headers=headers, params=query_str
 dst_ip_address = response.json()["response"][0]["managementIpAddress"]
 print ("Destination IP address: " + dst_ip_address)
 
-#create path trace
+#Create path trace
 PATH_TRACE_URL = "/dna/intent/api/v1/flow-analysis"
 path_trace_payload = {
      "sourceIP":src_ip_address,
@@ -66,7 +66,7 @@ response = requests.post(BASE_URL + PATH_TRACE_URL,headers=headers, json=path_tr
 flow_analysis_id = response.json()["response"]["flowAnalysisId"]
 print ("Flow analysis ID: " + flow_analysis_id)
 
-# #retrieve path trace through json. dumps(string)
+#retrieve path trace through json. dumps(string)
 
 time.sleep(5)
 path_trace_id_URL = "/dna/intent/api/v1/flow-analysis/{flow_analysis_id}"
@@ -75,4 +75,4 @@ result = (response.json()["response"])
 print(json.dumps(result, indent=2))
 #delete path trace
 response = requests.delete(BASE_URL + path_trace_id_URL.format(flow_analysis_id=flow_analysis_id),headers=headers, verify=False)
-print(response)
+print(str(response) + ", " + (response.reason))
