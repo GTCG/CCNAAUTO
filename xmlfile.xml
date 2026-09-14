@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devices>
+    <device>
+        <name>sw1</name>
+        <ip>10.10.20.175</ip>
+        <role>access</role>
+    </device>
+    <device>
+        <name>sw2</name>
+        <ip>10.10.20.176</ip>
+        <role>access</role>
+    </device>
+    <device>
+        <name>sw3</name>
+        <ip>10.10.20.177</ip>
+        <role>distribution</role>
+    </device>
+</devices>
