@@ -1,0 +1,17 @@
+---
+# Single document example
+site: Brasschaat-Lab
+devices:
+  - name: sw1
+    ip: 10.10.20.175
+    role: access
+  - name: sw2
+    ip: 10.10.20.176
+    role: access
+  - name: sw3
+    ip: 10.10.20.177
+    role: distribution
+credentials:
+  username: cisco
+  password: cisco
+enable_secret: null
