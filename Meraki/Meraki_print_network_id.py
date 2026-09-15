@@ -1,7 +1,7 @@
 """ print network ID"""
 
 
-import requests1
+import requests
 import json
 
 networkID= "L_669910444571383872"
