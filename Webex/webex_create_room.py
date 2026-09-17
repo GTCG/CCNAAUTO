@@ -7,14 +7,15 @@ messages= "https://webexapis.com/v1/messages/"
 webhook= "https://webexapis.com/v1/webhooks"
 roomID = "Y2lzY29zcGFyazovL3VybjpURUFNOmV1LWNlbnRyYWwtMV9rL1JPT00vN2QwZjUyMDAtYjExZC0xMWYxLWE1NGMtODFhZTU1NDc0MWQ3"
 webhookurl= "https://webhook.site/07cfd0cf-da25-4d17-aa95-0874f5686176"
+team = "https://webexapis.com/v1/teams"
 
 
 
-
+payload = {"name": "TRAINY_MCTRAINFACETEAM"}
 #payload = {"title":"testroom1"}
-payload = {"text": "balls yeah man!",
-           "roomId": roomID 
-           }
+#payload = {"text": "balls yeah man!",
+           #"roomId": roomID 
+           #}
 
 #webhook_payload = {
   #"name": "My Test Webhook",
@@ -29,7 +30,8 @@ headers = {
 }
 
 #response = requests.request("POST", webhook, headers=headers, json=webhook_payload)
-response = requests.request("POST", messages, headers=headers, json=payload)
+#response = requests.request("POST", messages, headers=headers, json=payload)
+response = requests.request("POST", team, headers=headers, json=payload)
 
 print(response.status_code)
 print(response.text)
