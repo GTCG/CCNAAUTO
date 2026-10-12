@@ -47,3 +47,5 @@ Science = [
 print(list(filter(lambda x: x["type"]=="Physics", Science))[0]["eyes"][0]["color"][0])
 #print(list(filter(lambda x: x["type"]=="Physics", Science))[0]["eyes"][0]["color"][0][0])
 print(list(filter(lambda x: x["type"]=="Physics", Science))[1]["eyes"][1]["color"][0])
+print(list(filter(lambda x: x["type"]=="Physics", Science))[0]["eyes"][0]["students"][1])
+print(list(filter(lambda x: x["type"]=="Chemistry", Science))[0]["eyes"][0]["color"][0])
