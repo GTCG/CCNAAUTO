@@ -4,7 +4,7 @@ Science = [
         "type": "Chemistry",
         "eyes": [
             {
-                "color": ["blue", "green"],
+                "color": ["blue", "green", "yellow"],
                 "students": ["Michael", "Debbie"]
             },
             {
@@ -50,3 +50,4 @@ print(list(filter(lambda x: x["type"]=="Physics", Science))[1]["eyes"][1]["color
 print(list(filter(lambda x: x["type"]=="Physics", Science))[0]["eyes"][0]["students"][1])
 print(list(filter(lambda x: x["type"]=="Chemistry", Science))[0]["eyes"][0]["color"][0])
 print(list(filter(lambda x: x["type"]=="Chemistry", Science))[0]["eyes"][0]["color"][1])
+print(list(filter(lambda x: x["type"]=="Chemistry", Science))[0]["eyes"][0]["color"][2])

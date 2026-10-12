@@ -1,0 +1,7 @@
+this is a test file
+with some text
+
+and another line of text
+this is where the file ends
+
+so goodbye!
