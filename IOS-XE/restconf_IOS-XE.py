@@ -26,9 +26,9 @@ import urllib3
 # Self-signed certs on lab devices -> suppress the warning (don't do this in prod)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-HOST = os.environ.get("RESTCONF_HOST", "192.168.110.160")
-USER = os.environ.get("RESTCONF_USER", "admin")
-PASS = os.environ.get("RESTCONF_PASS", "Cisco123!")
+HOST ="192.168.110.50"
+USER = "admin"
+PASS = "admin"
 
 BASE_URL = f"https://{HOST}/restconf/data"
 
