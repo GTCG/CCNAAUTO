@@ -1,7 +1,7 @@
 [iosxe:vars]
 ansible_connection=ansible.netcommon.network_cli
-ansible_user=Thomas
-ansible_password=Startrek1
+ansible_user=admin
+ansible_password=admin
 ansible_become=yes
 ansible_become_method=enable
 ansible_network_os=cisco.ios.ios
